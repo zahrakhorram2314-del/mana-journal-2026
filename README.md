@@ -18,5 +18,21 @@ Mana’s interface is designed to reduce cognitive load and guide you into a qui
 
 ---
 
-## 🚀 Live Demo & Repository
-* **Live App:** https://mana-38367492666.us-west1.run.app
+
+## ☁️ Deployment (Google Cloud Run)
+
+This app is deployed on Google Cloud Run.
+
+### Prerequisites
+- Google Cloud project with billing enabled
+- Firebase project (Auth + Firestore) linked to the same project
+- Gemini API key stored in Google Cloud Secret Manager
+
+### Steps
+
+1. **Clone the repo**
+2. **Set environment variables** (see `.env.example`)
+3. **Build the container image**
+4. **Deploy to Cloud Run**
+
+5. **Live app:** https://mana-38367492666.us-west1.run.app
