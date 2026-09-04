@@ -8,3 +8,15 @@ Mana’s interface is designed to reduce cognitive load and guide you into a qui
 * **Guided Starter Prompts:** Tap ready-to-use prompts like *"What am I grateful for right now?"* or *"What is one thing you learned today?"* to spark meaningful thoughts.
 * **Distraction-Free Journaling:** A clean, minimal canvas asking *"What is resting on your mind?"* for freeform expression.
 * **Reflect with Mana:** A single button that transitions you from writing into a calm breathing exercise before delivering gentle AI insights.
+---
+
+## 🛠️ Tech Stack & Infrastructure
+* **Frontend:** React.js, TypeScript, Tailwind CSS
+* **Backend & Auth:** Firebase Authentication & Firestore
+* **AI Engine:** Google Gemini API
+* **Cloud Hosting:** Google Cloud Run
+
+---
+
+## 🚀 Live Demo & Repository
+* **Live App:** https://mana-38367492666.us-west1.run.app
