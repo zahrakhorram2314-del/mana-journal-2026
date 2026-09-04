@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "JournalEntry": {
+      "title": "Journal Entry",
+      "description": "A user's journal entry and the AI reflection.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The ID of the user." },
+        "entry": { "type": "string", "description": "The user's journal entry." },
+        "emotion": { "type": "string", "description": "The user's emotional state." },
+        "reflection": { "type": "string", "description": "The AI-generated reflection." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "The time the entry was created." }
+      },
+      "required": ["userId", "entry", "reflection", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/journals/{journalId}": {
+      "schema": "JournalEntry",
+      "description": "A user's journal entry."
+    }
+  }
+}

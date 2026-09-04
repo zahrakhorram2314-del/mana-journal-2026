@@ -1,0 +1,6 @@
+{
+  "name": "Mana",
+  "description": "An empathetic AI self-reflection companion for journaling and cognitive reflection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

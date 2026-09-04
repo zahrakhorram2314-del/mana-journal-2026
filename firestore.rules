@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helpers
+    function isSignedIn() { return request.auth != null; }
+    function isOwner(userId) { return isSignedIn() && request.auth.uid == userId; }
+    function isValidJournalEntry(data) {
+        return data.userId is string && data.userId.size() <= 128 &&
+               data.entry is string && data.entry.size() <= 5000 &&
+               data.reflection is string && data.reflection.size() <= 5000 &&
+               data.createdAt is timestamp;
+    }
+
+    match /users/{userId}/journals/{journalId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidJournalEntry(request.resource.data) && request.resource.data.userId == userId && request.resource.data.createdAt == request.time;
+      allow update: if false; // Immutability
+      allow delete: if isOwner(userId);
+    }
+  }
+}
